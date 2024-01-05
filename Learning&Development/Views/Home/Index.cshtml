@@ -1,0 +1,53 @@
+﻿@model Learning_Development.Models.UserModel
+
+@{
+    ViewBag.Title = "PHILIPS";
+
+}
+
+
+<main>
+    
+    <div class="container">
+
+
+        <div class="book-ilustration">
+
+        </div>
+
+        <div class="login-form">
+
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-signin" }))
+            {
+                <h2 class="form-signin-heading">Learning & Development</h2>
+                @Html.LabelFor(m => m.EmployeeNumber, new { @class = "sr-only" })
+                @Html.TextBoxFor(m => m.EmployeeNumber, new { @class = "form-control", placeholder = "Username", required = "required", autofocus = "autofocus" })
+
+                @Html.LabelFor(m => m.Password, new { @class = "sr-only" })
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", required = "required" })
+
+                <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Login</button>
+            }
+
+
+        </div>
+
+
+    </div>
+
+    <style>
+
+        .book-ilustration {
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+
+    </style>
+
+</main>
